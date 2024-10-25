@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/ders7/src" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/ders9/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/ders9/core" isTestSource="false" packagePrefix="Core\" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/ders7/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/ders9/vendor/composer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
