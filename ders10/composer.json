@@ -1,0 +1,16 @@
+{
+    "name": "azer/ders10",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hlife97",
+            "email": "hidayet.hidayetov@gmail.com"
+        }
+    ],
+    "require": {}
+}
