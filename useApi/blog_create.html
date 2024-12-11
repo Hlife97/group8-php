@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST API Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Blog Post Form</h2>
+        <form id="blogForm">
+            <div class="mb-3">
+                <label for="category_id" class="form-label">Category ID</label>
+                <input type="number" class="form-control" id="category_id" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="title_en" class="form-label">Title (English)</label>
+                <input type="text" class="form-control" id="title_en" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="title_az" class="form-label">Title (Azerbaijani)</label>
+                <input type="text" class="form-control" id="title_az" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="description_en" class="form-label">Description (English)</label>
+                <textarea class="form-control" id="description_en" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="description_az" class="form-label">Description (Azerbaijani)</label>
+                <textarea class="form-control" id="description_az" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="slug" class="form-label">Slug</label>
+                <input type="text" class="form-control" id="slug" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="meta_title" class="form-label">Meta Title</label>
+                <input type="text" class="form-control" id="meta_title">
+            </div>
+
+            <div class="mb-3">
+                <label for="meta_description" class="form-label">Meta Description</label>
+                <input type="text" class="form-control" id="meta_description">
+            </div>
+
+            <div class="mb-3">
+                <label for="meta_keywords" class="form-label">Meta Keywords</label>
+                <input type="text" class="form-control" id="meta_keywords">
+            </div>
+
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-control" id="status" required>
+                    <option value="true">Active</option>
+                    <option value="false">Passive</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById('blogForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+
+            // Collect form data
+            const formData = {
+                category_id: document.getElementById('category_id').value,
+                title: {
+                    en: document.getElementById('title_en').value,
+                    az: document.getElementById('title_az').value
+                },
+                description: {
+                    en: document.getElementById('description_en').value,
+                    az: document.getElementById('description_az').value
+                },
+                slug: document.getElementById('slug').value,
+                image: null, // Assuming image is optional and not uploaded in this example
+                meta_title: document.getElementById('meta_title').value,
+                meta_description: document.getElementById('meta_description').value,
+                meta_keywords: document.getElementById('meta_keywords').value,
+                status: document.getElementById('status').value === "true" // Convert status to boolean
+            };
+
+            fetch('http://127.0.0.1:8000/api/v1/blogs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Blog post created successfully!');
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('There was an error creating the blog post.');
+                });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

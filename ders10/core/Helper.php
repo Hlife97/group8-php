@@ -15,6 +15,17 @@ class Helper
         return $filename;
     }
 
+    public static function getAdminViewFile($fileName){
+        $filename = '../app/Views/admin/' . $fileName . '.php';
+
+        if(!file_exists($filename)){
+            echo "File not found";
+            exit;
+        }
+
+        return $filename;
+    }
+
     public static function explodeController(string $method): array
     {
         return explode('@', $method);
